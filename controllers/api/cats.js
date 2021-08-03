@@ -6,6 +6,12 @@ async function showAllCats(req, res) {
     res.status(200).json(cats)
 }
 
+async function createACat(req, res) {
+    const newCat = await Cat.create(req.body);
+    res.status(201).json(newCat); 
+}
+
 module.exports = {
     index: showAllCats,
+    create: createACat
 }
