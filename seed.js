@@ -7,16 +7,16 @@ const Cat = require('./models/cat');
 
     await Cat.deleteMany({});
     const cats = await Cat.create([
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
-        { ID: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { _id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
     ]);
 
     console.log(cats);

@@ -5,6 +5,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import CatListPage from '../../pages/CatListPage/CatListPage'
 import NavBar from "../../components/NavBar/NavBar";
 import LandingPage from '../LandingPage/LandingPage';
+import CatDetailPage from "../CatDetailPage/CatDetailPage";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route path="/cats">
               <CatListPage />
+            </Route>
+            <Route path='/details'>
+                <CatDetailPage/>
             </Route>
             {/* <Route path="/orders">
               <OrderHistoryPage />

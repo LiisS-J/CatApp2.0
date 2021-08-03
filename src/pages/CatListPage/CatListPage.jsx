@@ -23,12 +23,13 @@ function CatListPage(props) {
 					<CatListItem
 						cat={cat}
 						key={cat._id}
+                        handleDeleteCat={props.handleDeleteCat}
 					/>
 				))}
 			</div>
 		</>
 	);
 }
-						// {/* handleDeleteCat={props.handleDeleteCat} */}
+						{/*  */}
 
 export default CatListPage;

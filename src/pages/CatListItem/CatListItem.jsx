@@ -1,13 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CatListItem({ cat, handleDeleteCat }) {
+function CatListItem({ cat }) {
   return (
     <div>
       <div>
         <h3>{cat.name}</h3>
       </div>
       <div>
+          <div>
+              AGE: {cat.age}
+          </div>
+          <div>
+              SEX: {cat.sex}
+          </div>
+          <div>
+              BREED: {cat.breed}
+          </div>
         <Link
           to={{
             pathname: "/details",
@@ -16,15 +25,6 @@ function CatListItem({ cat, handleDeleteCat }) {
         >
           MEET ME!
         </Link>
-        <Link
-          to={{
-            pathname: "/edit",
-            state: { cat },
-          }}
-        >
-          EDIT CAT
-        </Link>
-        <button onClick={() => handleDeleteCat(cat._id)}>DELETE</button>
       </div>
     </div>
   );
