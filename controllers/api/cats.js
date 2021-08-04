@@ -27,9 +27,15 @@ async function updateCat(req, res) {
     res.status(200).json(updatedCat);
 }
 
+async function deleteCat(req, res) {
+    const deletedCat = await Cat.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedCat);
+  }
+
 module.exports = {
     index: showAllCats,
     create: createACat,
     show: showCat,
-    update: updateCat
+    update: updateCat,
+    delete: deleteCat
 }

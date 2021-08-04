@@ -12,7 +12,7 @@ function CatDetailPage(props) {
 
 	return (
 		<>
-			<CatCard cat={cat} key={cat._id} />
+			<CatCard cat={cat} key={cat._id} handleDeleteCat={props.handleDeleteCat}/>
 		</>
 	);
 }

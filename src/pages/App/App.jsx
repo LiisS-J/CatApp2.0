@@ -46,6 +46,11 @@ function App() {
         setCats(newCatsArray);
   }
 
+  async function handleDeleteCat(id){
+    await catsAPI.deleteOne(id);
+    setCats(cats.filter(c => c._id !== id))
+  }
+
   return (
     <main className="App">
       {user ? (
@@ -59,7 +64,7 @@ function App() {
               <CatListPage />
             </Route>
             <Route path="/details">
-              <CatDetailPage />
+              <CatDetailPage handleDeleteCat={handleDeleteCat}/>
             </Route>
             <Route path="/new">
               <AddCatPage handleAddCat={handleAddCat} />
