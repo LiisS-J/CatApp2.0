@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CatCard({ cat, handleDeleteCat }) {
   return (
     <div>
-        {/* <div><img src={cat.imgUrl}/></div> */}
+        <div><img src={cat.imgUrl}/></div>
       <div>
         <h1>{cat.name}</h1>
       </div>
@@ -37,7 +37,7 @@ function CatCard({ cat, handleDeleteCat }) {
           state: { cat },
         }}
       >
-        EDIT CAT
+        UPDATE CAT
       </Link>
       <div>
         <Link to="/cats">RETURN TO LIST</Link>

@@ -2,43 +2,39 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function UpdateCatPage(props) {
-    const location = useLocation();
+  const location = useLocation();
 
-    const [invalidForm, setValidForm] = useState(true);
-    const[formData, setFormData] = useState(location.state.cat);
+  const [invalidForm, setValidForm] = useState(true);
+  const [formData, setFormData] = useState(location.state.cat);
 
-    const formRef = useRef();
+  const formRef = useRef();
 
-    useEffect(() => {
-        formRef.current.checkValidity()
-        ? setValidForm(false)
-        : setValidForm(true);
-    }, [formData])
-   
-    const handleSubmit = e => {
-        e.preventDefault();
-        props.handleUpdateCat(formData);
-    };
+  useEffect(() => {
+    formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
+  }, [formData]);
 
-    const handleChange = e => {
-        setFormData ({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.handleUpdateCat(formData);
+  };
 
-    return (
-        <>
-    
-            <h1>Edit Cat</h1>
-            <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <>
+      <h1>Update Cat</h1>
+      <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
         <div>
           <label>
             <b>URL to the cat photo:</b>
           </label>
           <input
             name="url"
-            type="url"
             value={formData.imgUrl}
             onChange={handleChange}
           />
@@ -105,13 +101,13 @@ function UpdateCatPage(props) {
           />
         </div>
         <button type="submit" className="btn" disabled={invalidForm}>
-          EDIT CAT
+          UPDATE CAT
         </button>
         &nbsp;&nbsp;
-				<Link to='/cats'>CANCEL</Link>
+        <Link to="/cats">CANCEL</Link>
       </form>
-        </>
-    )    
+    </>
+  );
 }
 
 export default UpdateCatPage;

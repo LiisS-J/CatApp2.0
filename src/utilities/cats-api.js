@@ -2,7 +2,8 @@ const BASE_URL = "/api/cats";
 
 const catsAPI = {
   getAll,
-  create
+  create,
+  update
 };
 
 async function getAll() {
@@ -15,6 +16,14 @@ async function create(newCatData) {
     headers: { "content-type": "application/json" },
     body: JSON.stringify(newCatData),
   }).then((res) => res.json());
+}
+
+export function update(updatedCatData) {
+  return fetch(`${BASE_URL}/${updatedCatData._id}`, {
+    method: "PUT",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(updatedCatData),
+  }).then(res => res.json());
 }
 
 export default catsAPI;

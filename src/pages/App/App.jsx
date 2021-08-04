@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState(getUser());
   const [cats, setCats] = useState([]);
   const history = useHistory();
+  const [catsArray, setCatsArray] = useState()
 
   useEffect(() => {
     async function getCats() {
@@ -63,7 +64,7 @@ function App() {
             <Route path="/new">
               <AddCatPage handleAddCat={handleAddCat} />
             </Route>
-            <Route path="/update">
+            <Route exact path="/edit">
                 <UpdateCatPage handleUpdateCat={handleUpdateCat}/>
             </Route>
           </Switch>

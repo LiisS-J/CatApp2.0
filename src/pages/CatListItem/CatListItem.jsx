@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 function CatListItem({ cat }) {
   return (
-    <div>
-        {/* <div style={[{backgroundImage: `url(" + {cat.imgUrl} + ")}, {max-width: 150px}, min-height: 150px}, {backgroundSize: cover}]}></div> */}
+    <div> 
+        <div><img src={cat.imgUrl} /></div>
       <div>
-        <h3>{cat.name}</h3>
+        <h2>{cat.name}</h2>
       </div>
       <div>
-        <div>AGE: {cat.age}</div>
-        <div>SEX: {cat.sex}</div>
-        <div>BREED: {cat.breed}</div>
+        <div><b>Age:</b> {cat.age}</div>
+        <div><b>Sex:</b> {cat.sex}</div>
+        <div><b>Breed:</b> {cat.breed}</div>
         <Link
           to={{
             pathname: "/details",

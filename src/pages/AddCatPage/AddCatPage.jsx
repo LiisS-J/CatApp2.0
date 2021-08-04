@@ -36,7 +36,6 @@ function AddCatPage(props) {
           </label>
           <input
             name="url"
-            type="url"
             value={formData.imgUrl}
             onChange={handleChange}
           />
