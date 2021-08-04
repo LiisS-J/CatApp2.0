@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './CatCard.css'
 
 function CatCard({ cat, handleDeleteCat }) {
   return (
-    <div>
-        <div className="catImg"><img src={cat.imgUrl}/></div>
+    <div className="catDetails">
+      <div className="catImg">
+        <img src={cat.imgUrl} />
+      </div>
       <div>
         <h1>{cat.name}</h1>
       </div>
