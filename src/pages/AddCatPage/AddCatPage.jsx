@@ -3,9 +3,13 @@ import React, { Component, useState, useRef, useEffect } from "react";
 function AddCatPage(props) {
   const [invalidForm, setValidForm] = useState(true);
   const [formData, setFormData] = useState({
+    url: "",
     name: "",
+    sex: "F",
+    age: 1,
     breed: "Mixed",
-    age: "0",
+    health: "Good",
+    adoptionStatus: "Available",
   });
 
   const formRef = useRef();
@@ -34,11 +38,7 @@ function AddCatPage(props) {
           <label>
             <b>URL to the cat photo:</b>
           </label>
-          <input
-            name="url"
-            value={formData.imgUrl}
-            onChange={handleChange}
-          />
+          <input name="url" value={formData.imgUrl} onChange={handleChange} />
         </div>
         <div>
           <label>

@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 module.exports = function (req, res, next) {
 	// Check for the token being sent in a header or as a query string parameter
 	let token = req.get('Authorization') || req.query.token;
+    console.log('   :::   checkToken() -> token: ', token);
 	if (token) {
 		// Remove the 'Bearer ' if it was included in the token header
 		token = token.replace('Bearer ', '');
@@ -12,6 +13,7 @@ module.exports = function (req, res, next) {
 			// If invalid token, err will be set
 			req.user = err ? null : decoded.user;
 			// If your app cares... (optional)
+            console.log(req.user)
 			req.exp = err ? null : new Date(decoded.exp * 1000);
 			return next();
 		});

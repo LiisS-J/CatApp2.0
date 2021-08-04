@@ -21,7 +21,7 @@ export default function LogIn({ setUser }) {
 			const user = await usersService.login(credentials);
 			setUser(user);
 		} catch {
-			setError('Log In Failed - Try Again');
+			setError('Log In Failed. Please make sure your email and password were entered correctly');
 		}
 	}
 	return (

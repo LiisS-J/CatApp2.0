@@ -46,7 +46,10 @@ export async function login(credentials) {
 		const token = await usersAPI.login(credentials);
 		// Persist the "token"
 		localStorage.setItem('token', token);
-		return getUser();
+		// return getUser();
+        let toke = getUser();
+        console.log('getUser() token: ', toke);
+        return toke;
 	} catch {
 		throw new Error('Invalid Login');
 	}
