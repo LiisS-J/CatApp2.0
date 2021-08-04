@@ -17,7 +17,7 @@ function NavBar({ user, setUser }) {
         <nav>
           <NavLink to="/cats">HOME</NavLink>
           &nbsp; | &nbsp;
-          <NavLink to="/cats">ADOPT</NavLink>
+          <NavLink to="/adopt">ADOPT</NavLink>
           &nbsp; | &nbsp;
           <NavLink to="/new">ADD A KITTY</NavLink>
           &nbsp; | &nbsp;

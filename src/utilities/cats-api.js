@@ -1,5 +1,12 @@
 const BASE_URL = "/api/cats";
 
+const catsAPI = {
+    getAll,
+    create,
+    update,
+    deleteOne
+  };
+
 async function getAll() {
   return await fetch(BASE_URL).then((res) => res.json());
 }
@@ -25,12 +32,5 @@ export function deleteOne(id) {
       method: 'DELETE'
     }).then(res => res.json());
   }
-
-  const catsAPI = {
-    getAll,
-    create,
-    update,
-    deleteOne
-  };
 
 export default catsAPI;

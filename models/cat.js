@@ -10,6 +10,10 @@ const catSchema = new Schema({
     adoptionStatus: String,
     imgUrl: {
         type: String,
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 });
 

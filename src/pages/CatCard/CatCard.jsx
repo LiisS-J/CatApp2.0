@@ -45,6 +45,8 @@ function CatCard({ cat, handleDeleteCat }) {
       <div>
         <button onClick={() => handleDeleteCat(cat._id)}>DELETE</button>
       </div>
+      <hr />
+      <div>Applicants for this cat: </div>
     </div>
   );
 }
