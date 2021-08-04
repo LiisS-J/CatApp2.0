@@ -30,6 +30,5 @@ function CatListPage(props) {
 		</>
 	);
 }
-						{/*  */}
 
 export default CatListPage;

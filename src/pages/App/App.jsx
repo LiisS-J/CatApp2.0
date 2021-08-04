@@ -8,6 +8,7 @@ import catsAPI from "../../utilities/cats-api";
 import LandingPage from "../LandingPage/LandingPage";
 import CatDetailPage from "../CatDetailPage/CatDetailPage";
 import AddCatPage from "../AddCatPage/AddCatPage";
+import UpdateCatPage from "../UpdateCatPage/UpdateCatPage";
 import "./App.css";
 
 function App() {
@@ -37,6 +38,13 @@ function App() {
     setCats([...cats, newCat]);
   }
 
+  async function handleUpdateCat(updatedCatData) {
+      const updatedCat = await catsAPI.update(updatedCatData);
+      const newCatsArray= cats.map(c =>
+        c._id === updatedCat._id ? updatedCat : c);
+        setCats(newCatsArray);
+  }
+
   return (
     <main className="App">
       {user ? (
@@ -54,6 +62,9 @@ function App() {
             </Route>
             <Route path="/new">
               <AddCatPage handleAddCat={handleAddCat} />
+            </Route>
+            <Route path="/update">
+                <UpdateCatPage handleUpdateCat={handleUpdateCat}/>
             </Route>
           </Switch>
         </>

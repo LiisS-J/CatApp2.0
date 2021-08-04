@@ -7,7 +7,7 @@ const Cat = require('./models/cat');
 
     await Cat.deleteMany({});
     const cats = await Cat.create([
-        { _id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
+        { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
         { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
         { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
         { id: 93456365346e374, name: 'Sadie', sex: 'F', age: 2, breed: 'Mix'},
