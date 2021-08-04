@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CatCard({ cat, handleDeleteCat }) {
   return (
     <div>
-        <div><img src={cat.imgUrl}/></div>
+        <div className="catImg"><img src={cat.imgUrl}/></div>
       <div>
         <h1>{cat.name}</h1>
       </div>

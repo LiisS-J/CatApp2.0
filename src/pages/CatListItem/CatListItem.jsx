@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CatListItem({ cat }) {
   return (
     <div> 
-        <div><img src={cat.imgUrl} /></div>
+        <div><img src={`${cat.imgUrl}`}/></div>
       <div>
         <h2>{cat.name}</h2>
       </div>
