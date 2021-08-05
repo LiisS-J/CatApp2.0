@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getUser } from "../../utilities/users-service";
 import "./CatCard.css";
 
-function CatCard({ cat, handleDeleteCat }) {
+function CatCard({ cat, handleDeleteCat, user }) {
   return (
     <div className="catDetails">
       <div>
@@ -34,24 +35,28 @@ function CatCard({ cat, handleDeleteCat }) {
           <b>Adoption Status:</b> {cat.adoptionStatus}
         </div>
       </div>
-      <Link
-        id="updateLink"
-        to={{
-          pathname: "/edit",
-          state: { cat },
-        }}
-      >
-        UPDATE CAT
-      </Link>
+      {user.isAdmin && (
+        <Link
+          id="updateLink"
+          to={{
+            pathname: "/edit",
+            state: { cat },
+          }}
+        >
+          UPDATE CAT
+        </Link>
+      )}
       <div>
         <Link id="returnLink" to="/cats">
           RETURN TO LIST
         </Link>
       </div>
       <div>
-        <button id="deleteBtn" onClick={() => handleDeleteCat(cat._id)}>
-          DELETE CAT
-        </button>
+        {user.isAdmin && (
+          <button id="deleteBtn" onClick={() => handleDeleteCat(cat._id)}>
+            DELETE CAT
+          </button>
+        )}
       </div>
       <hr />
       <div>

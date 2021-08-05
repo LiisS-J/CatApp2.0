@@ -66,7 +66,7 @@ function App() {
               <CatListPage className="catDetails" />
             </Route>
             <Route path="/details">
-              <CatDetailPage handleDeleteCat={handleDeleteCat} />
+              <CatDetailPage user={user} handleDeleteCat={handleDeleteCat} />
             </Route>
             <Route path="/new">
               <AddCatPage handleAddCat={handleAddCat} />

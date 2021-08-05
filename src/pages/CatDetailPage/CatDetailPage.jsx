@@ -19,6 +19,7 @@ function CatDetailPage(props) {
         cat={cat}
         key={cat._id}
         handleDeleteCat={props.handleDeleteCat}
+        user={props.user}
       />
     </div>
   );
