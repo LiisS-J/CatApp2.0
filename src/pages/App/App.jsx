@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     // This is listenting for each time puppies state is changed,
     // then will run our function below to reroute
-    history.push("/cats");
+    history.push("/cats"); /* if this is /cats, you'll always redirect to /cats because useEffect() is run after render */
   }, [cats, history]);
 
   async function handleAddCat(newCatData) {
@@ -55,30 +55,36 @@ function App() {
 
   return (
     <main className="App">
-      {user ? (
-        <div className="details">
+        <div className="mainPage">
           <NavBar className="navBar" user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
-              <LandingPage />
+                <LandingPage />
             </Route>
             <Route path="/cats">
-              <CatListPage className="catDetails" />
+                <CatListPage className="catDetails" />
             </Route>
             <Route path="/details">
-              <CatDetailPage user={user} handleDeleteCat={handleDeleteCat} />
+                <CatDetailPage user={user} handleDeleteCat={handleDeleteCat} />
             </Route>
-            <Route path="/new">
-              <AddCatPage handleAddCat={handleAddCat} />
-            </Route>
-            <Route exact path="/edit">
-              <UpdateCatPage handleUpdateCat={handleUpdateCat} />
+            <Route path="/login">
+                <AuthPage setUser={setUser} />
             </Route>
           </Switch>
         </div>
-      ) : (
-        <AuthPage setUser={setUser} />
-      )}
+
+        {user ? (
+        <div className="mainPage">
+            <Switch>
+                <Route path="/new">
+                    <AddCatPage handleAddCat={handleAddCat} />
+                </Route>
+                <Route exact path="/edit">
+                    <UpdateCatPage handleUpdateCat={handleUpdateCat} />
+                </Route>
+            </Switch>
+        </div>
+        ) : ''}
     </main>
   );
 }

@@ -12,27 +12,44 @@ function NavBar({ user, setUser }) {
     setUser(null);
   }
 
-  return (
-    <div className="navBar">
-      <header>
-        <nav>
-          <NavLink to="/cats">HOME</NavLink>
-          &nbsp; | &nbsp;
-          <NavLink to="/adopt">ADOPT</NavLink>
-          &nbsp; | &nbsp;
-          <NavLink to="/new">ADD A KITTY</NavLink>
-          &nbsp; | &nbsp;
-          <span>
-            <b>Welcome, {user.name}</b>
-          </span>
-          &nbsp; | &nbsp;
-          <NavLink to="" onClick={handleLogOut}>
-            Log Out
-          </NavLink>
-        </nav>
-      </header>
-    </div>
-  );
+    return (
+        <div className="navBar">
+            <header>
+                <nav>
+                    <NavLink to="/cats">HOME</NavLink>
+                    {/* &nbsp; | &nbsp;
+                    <NavLink to="/adopt">ADOPT</NavLink> */}
+                    &nbsp; | &nbsp;
+                    {user ? (
+                        user.isAdmin ? (
+                            <span>
+                                <NavLink to="/new">ADD A KITTY</NavLink>
+                            </span>
+                        ) : (
+                            <span>
+                                &nbsp; | &nbsp;
+                                <b>Welcome, {user.name}</b>
+                                &nbsp; | &nbsp;
+                                <NavLink to="" onClick={handleLogOut}>
+                                    Log Out
+                                </NavLink>
+                            </span>
+                        )
+                    ) : (
+                        <span>
+                            <NavLink to="/login">
+                                Log In
+                            </NavLink>
+                            &nbsp; | &nbsp;
+                            <NavLink to="/login">
+                                Sign Up
+                            </NavLink>
+                        </span>
+                    )}
+                </nav>
+            </header>
+        </div>
+    );
 }
 
 export default NavBar;

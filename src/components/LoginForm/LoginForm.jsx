@@ -28,7 +28,7 @@ export default function LogIn({ setUser }) {
 		<div>
 			<div className='form-container' onSubmit={handleSubmit}>
 				<form autoComplete='off'>
-					<label>Email</label>
+					<label><b>Email:</b></label>
 					<input
 						type='text'
 						name='email'
@@ -36,7 +36,7 @@ export default function LogIn({ setUser }) {
 						onChange={handleChange}
 						required
 					/>
-					<label>Password</label>
+					<label><b>Password:</b></label>
 					<input
 						type='password'
 						name='password'
@@ -47,7 +47,7 @@ export default function LogIn({ setUser }) {
 					<button type='submit'>LOG IN</button>
 				</form>
 			</div>
-			<p className='error-message'>&nbsp;{error}</p>
+			<p style={{fontSize: "25px", color: "#DD6C3A"}} className='error-message'>&nbsp;{error}</p>
 		</div>
 	);
 }
