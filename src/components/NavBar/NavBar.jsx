@@ -1,6 +1,7 @@
 import React,  {useState, useEffect} from 'react';
 import { Route, NavLink } from "react-router-dom";
 import * as usersService from "../../utilities/users-service";
+import '../../pages/App/App.css'
 
 function NavBar({ user, setUser }) {
   // Add the following function
@@ -12,7 +13,7 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <div>
+    <div className="navBar">
       <header>
         <nav>
           <NavLink to="/cats">HOME</NavLink>

@@ -1,8 +1,45 @@
 .catDetails {
     border: 1px solid black;
+    text-align: center;
+    /* margin-top: 50px; */
 }
 
 img {
-    max-width: 250px;
-    max-height: 300px;
+    max-width: 300px;
+    max-height: 450px;
+    margin-top: 40px;
+}
+
+#catName {
+    font-size: 2.5em;
+}
+
+#updateLink {
+    color: rgb(57, 193, 42);
+    margin: 30px auto;
+    font-size: 25px;
+}
+
+#updateLink:hover {
+    background-color: rgb(57, 193, 42);
+    color: white;
+}
+
+#returnLink {
+    color: #3AA6DD;
+    font-size: 25px;
+}
+
+#returnLink:hover {
+    background-color: #3AA6DD;
+    color: white;
+}
+
+#deleteBtn {
+    color: red;
+}
+
+#deleteBtn:hover {
+    background-color: red;
+    color: white;
 }

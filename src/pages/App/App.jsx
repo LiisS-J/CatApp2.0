@@ -54,14 +54,14 @@ function App() {
   return (
     <main className="App">
       {user ? (
-        <>
-          <NavBar user={user} setUser={setUser} />
+        <div>
+          <NavBar className="navBar" user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
               <LandingPage />
             </Route>
             <Route path="/cats">
-              <CatListPage />
+              <CatListPage className="catDetails"/>
             </Route>
             <Route path="/details">
               <CatDetailPage handleDeleteCat={handleDeleteCat}/>
@@ -73,7 +73,7 @@ function App() {
                 <UpdateCatPage handleUpdateCat={handleUpdateCat}/>
             </Route>
           </Switch>
-        </>
+        </div>
       ) : (
         <AuthPage setUser={setUser} />
       )}

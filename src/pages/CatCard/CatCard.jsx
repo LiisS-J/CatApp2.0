@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './CatCard.css'
+import "./CatCard.css";
 
 function CatCard({ cat, handleDeleteCat }) {
   return (
     <div className="catDetails">
-      <div className="catImg">
+      <div>
         <img src={cat.imgUrl} />
       </div>
       <div>
-        <h1>{cat.name}</h1>
+        <h1 id="catName">{cat.name}</h1>
       </div>
       <div>
         <div>
@@ -35,6 +35,7 @@ function CatCard({ cat, handleDeleteCat }) {
         </div>
       </div>
       <Link
+        id="updateLink"
         to={{
           pathname: "/edit",
           state: { cat },
@@ -43,13 +44,19 @@ function CatCard({ cat, handleDeleteCat }) {
         UPDATE CAT
       </Link>
       <div>
-        <Link to="/cats">RETURN TO LIST</Link>
+        <Link id="returnLink" to="/cats">
+          RETURN TO LIST
+        </Link>
       </div>
       <div>
-        <button onClick={() => handleDeleteCat(cat._id)}>DELETE</button>
+        <button id="deleteBtn" onClick={() => handleDeleteCat(cat._id)}>
+          DELETE CAT
+        </button>
       </div>
       <hr />
-      <div>Applicants for this cat: </div>
+      <div>
+        <h2>Applicants for this cat: </h2>
+      </div>
     </div>
   );
 }
