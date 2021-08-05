@@ -29,10 +29,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // This is listenting for each time puppies state is changed,
+    // This is listenting for each time cats state is changed,
     // then will run our function below to reroute
-    history.push("/cats"); /* if this is /cats, you'll always redirect to /cats because useEffect() is run after render */
-  }, [cats, history]);
+    history.push("/cats");
+  }, [cats, user]);
 
   async function handleAddCat(newCatData) {
     const newCat = await catsAPI.create(newCatData);

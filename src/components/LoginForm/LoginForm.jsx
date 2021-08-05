@@ -7,10 +7,12 @@ export default function LogIn({ setUser }) {
 		password: '',
 	});
 	const [error, setError] = useState('');
-	function handleChange(evt) {
+
+    function handleChange(evt) {
 		setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
 		setError('');
 	}
+
 	async function handleSubmit(evt) {
 		// Prevent form from being submitted to the server
 		evt.preventDefault();
