@@ -3,7 +3,7 @@ import React, { Component, useState, useRef, useEffect } from "react";
 function AddCatPage(props) {
   const [invalidForm, setValidForm] = useState(true);
   const [formData, setFormData] = useState({
-    url: "",
+    imgUrl: "",
     name: "",
     sex: "F",
     age: 1,
@@ -38,7 +38,7 @@ function AddCatPage(props) {
           <label>
             <b>URL to the cat photo:</b>
           </label>
-          <input name="url" value={formData.imgUrl} onChange={handleChange} />
+          <input name="imgUrl" value={formData.imgUrl} onChange={handleChange} />
         </div>
         <div>
           <label>

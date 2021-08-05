@@ -10,12 +10,13 @@ import CatDetailPage from "../CatDetailPage/CatDetailPage";
 import AddCatPage from "../AddCatPage/AddCatPage";
 import UpdateCatPage from "../UpdateCatPage/UpdateCatPage";
 import "./App.css";
+// import "../CatCard/CatCard.css";
 
 function App() {
   const [user, setUser] = useState(getUser());
   const [cats, setCats] = useState([]);
   const history = useHistory();
-  const [catsArray, setCatsArray] = useState()
+  const [catsArray, setCatsArray] = useState();
 
   useEffect(() => {
     async function getCats() {
@@ -30,9 +31,8 @@ function App() {
   useEffect(() => {
     // This is listenting for each time puppies state is changed,
     // then will run our function below to reroute
-    history.push('/cats');
-}, [cats, history]);
-
+    history.push("/cats");
+  }, [cats, history]);
 
   async function handleAddCat(newCatData) {
     const newCat = await catsAPI.create(newCatData);
@@ -40,37 +40,39 @@ function App() {
   }
 
   async function handleUpdateCat(updatedCatData) {
-      const updatedCat = await catsAPI.update(updatedCatData);
-      const newCatsArray= cats.map(c =>
-        c._id === updatedCat._id ? updatedCat : c);
-        setCats(newCatsArray);
+    const updatedCat = await catsAPI.update(updatedCatData);
+    const newCatsArray = cats.map((c) =>
+      c._id === updatedCat._id ? updatedCat : c
+    );
+    setCats(newCatsArray);
   }
 
-  async function handleDeleteCat(id){
+  async function handleDeleteCat(id) {
+    console.log('   ~~~   handleDeleteCat(' + id + ')');
     await catsAPI.deleteOne(id);
-    setCats(cats.filter(c => c._id !== id))
+    setCats(cats.filter((c) => c._id !== id));
   }
 
   return (
     <main className="App">
       {user ? (
-        <div>
+        <div className="details">
           <NavBar className="navBar" user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
               <LandingPage />
             </Route>
             <Route path="/cats">
-              <CatListPage className="catDetails"/>
+              <CatListPage className="catDetails" />
             </Route>
             <Route path="/details">
-              <CatDetailPage handleDeleteCat={handleDeleteCat}/>
+              <CatDetailPage handleDeleteCat={handleDeleteCat} />
             </Route>
             <Route path="/new">
               <AddCatPage handleAddCat={handleAddCat} />
             </Route>
             <Route exact path="/edit">
-                <UpdateCatPage handleUpdateCat={handleUpdateCat}/>
+              <UpdateCatPage handleUpdateCat={handleUpdateCat} />
             </Route>
           </Switch>
         </div>

@@ -4,7 +4,11 @@ module.exports = function (req, res, next) {
 	// Check for the token being sent in a header or as a query string parameter
 	let token = req.get('Authorization') || req.query.token;
     console.log('   :::   checkToken() -> token: ', token);
-	if (token) {
+    console.log('   :::   req.headers.authorization --> ', req.headers.authorization);
+    console.log('   :::   req.params.token --> ', req.params.token);
+    // console.log('   :::   req --> ', req);
+
+    if (token) {
 		// Remove the 'Bearer ' if it was included in the token header
 		token = token.replace('Bearer ', '');
 		// Check if the token is valid and not expired
@@ -13,12 +17,13 @@ module.exports = function (req, res, next) {
 			// If invalid token, err will be set
 			req.user = err ? null : decoded.user;
 			// If your app cares... (optional)
-            console.log(req.user)
+            console.log('   ;;;   jwt.verify() --> ', req.user);
 			req.exp = err ? null : new Date(decoded.exp * 1000);
 			return next();
 		});
 	} else {
 		// No token was sent
+        console.log('   ;;;   no token passed.');
 		req.user = null;
 		return next();
 	}

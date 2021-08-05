@@ -16,7 +16,7 @@ async function create(newCatData) {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      Authorization: localStorage.getItem("token"),
+      "Authorization": localStorage.getItem("token"),
     },
     body: JSON.stringify(newCatData),
   }).then((res) => res.json());
@@ -27,18 +27,21 @@ export function update(updatedCatData) {
     method: "PUT",
     headers: {
       "content-type": "application/json",
-      Authorization: localStorage.getItem("token"),
+      "Authorization": localStorage.getItem("token"),
     },
     body: JSON.stringify(updatedCatData),
   }).then((res) => res.json());
 }
 
 export function deleteOne(id) {
-  return fetch(`${BASE_URL}/${id}`, {
+  console.log(' ::: THIS IS THE AUTHORIZATION TOKEN --> ',localStorage.getItem("token"));
+  return fetch(`${BASE_URL}/${id}?token=${localStorage.getItem("token")}`, {
     method: "DELETE",
     header: {
-      Authorization: localStorage.getItem("token"),
+      "content-type": "application/json",
+    //   "Authorization": localStorage.getItem("token"),
     },
+    // body: JSON.stringify({token:localStorage.getItem("token")})
   }).then((res) => res.json());
 }
 

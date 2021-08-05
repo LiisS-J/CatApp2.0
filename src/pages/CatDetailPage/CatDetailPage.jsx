@@ -1,7 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import CatCard from "../CatCard/CatCard";
-import "../CatCard/CatCard.css";
+// import CatCard from "../CatCard/CatCard.css";
+// import "../CatListItem/CatListItem.css";
 
 function CatDetailPage(props) {
   // Refer to PuppyListItem to see how puppy is being passed via the <Link>

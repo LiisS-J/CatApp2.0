@@ -34,7 +34,7 @@ function UpdateCatPage(props) {
             <b>URL to the cat photo:</b>
           </label>
           <input
-            name="url"
+            name="imgUrl"
             value={formData.imgUrl}
             onChange={handleChange}
           />
