@@ -18,6 +18,7 @@ export async function signUp(userData) {
 export function getToken() {
 	// getItem returns null if there's no string
 	const token = localStorage.getItem('token');
+    console.log('THIS IS GET TOKEN -->', token)
 	if (!token) return null;
 	// Check if expired, remove if it is
 	const payload = JSON.parse(atob(token.split('.')[1]));
@@ -47,10 +48,10 @@ export async function login(credentials) {
         console.log('       :::     This is where the token is --> ', token)
 		// Persist the "token"
 		localStorage.setItem('token', token);
-		// return getUser();
-        let toke = getUser();
-        console.log('getUser() token: ', toke);
-        return toke;
+		return getUser();
+        // let token = getUser();
+        // console.log('getUser() token: ', token);
+        // return token;
 	} catch {
 		throw new Error('Invalid Login');
 	}

@@ -18,7 +18,6 @@ async function showCat(req, res) {
 }
 
 async function updateCat(req, res) {
-//   req.body.imgUrl = req.body.url;f
   const updatedCat = await Cat.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });
