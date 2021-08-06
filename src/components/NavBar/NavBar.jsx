@@ -21,7 +21,6 @@ function NavBar({ user, setUser }) {
           </NavLink>
           &nbsp; | &nbsp;
           <NavLink to="/new">ADD A KITTY</NavLink>
-          {/* &nbsp; | &nbsp; */}
           {user ? (
             <span>
               &nbsp; | &nbsp;
