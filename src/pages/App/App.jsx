@@ -57,9 +57,9 @@ function App() {
       <div className="mainPage">
         <NavBar className="navBar" user={user} setUser={setUser} />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <LandingPage />
-          </Route>
+          </Route> */}
           <Route path="/cats">
             <CatListPage className="catDetails" />
           </Route>

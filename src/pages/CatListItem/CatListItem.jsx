@@ -8,7 +8,7 @@ function CatListItem({ cat }) {
         <img src={`${cat.imgUrl}`} />
       </div>
       <div>
-        <h2 style={{ fontSize: "35px", textDecoration: "underline" }}>
+        <h2 style={{ fontSize: "50px", textDecoration: "underline" }}>
           {cat.name}
         </h2>
       </div>
@@ -29,7 +29,7 @@ function CatListItem({ cat }) {
           </p>
         </div>
         <Link
-          style={{ fontSize: "25px", color: "#3AA6DD" }}
+          style={{ fontSize: "35px", color: "#3AA6DD" }}
           className="meetLink"
           to={{
             pathname: "/details",

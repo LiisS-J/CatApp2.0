@@ -17,7 +17,7 @@ function CatCard({ cat, handleDeleteCat, user }) {
         <img src={cat.imgUrl} />
       </div>
       <div>
-        <h1 id="catName">{cat.name}</h1>
+        <h1>{cat.name}</h1>
       </div>
 
       <div>
@@ -82,7 +82,7 @@ function CatCard({ cat, handleDeleteCat, user }) {
       </div>
       <hr />
       <div style={{ paddingBottom: "50px" }}>
-        <h2>Applicants for this cat: </h2>
+        <h2 style={{fontSize: "35px"}}>Applicants for this cat: </h2>
       </div>
     </div>
   );

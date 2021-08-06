@@ -114,10 +114,10 @@ function UpdateCatPage(props) {
           <div
             style={{
               textAlign: "center",
-              fontSize: "23px",
+              fontSize: "30px",
               borderRadius: "8px",
-              width: "150px",
-              height: "40px",
+              width: "200px",
+              height: "60px",
               backgroundColor: "red",
               marginTop: "10px",
             }}

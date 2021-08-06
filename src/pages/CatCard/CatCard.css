@@ -16,7 +16,7 @@ img {
 #updateLink {
     color: rgb(57, 193, 42);
     margin: 30px auto;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 #updateLink:hover {
@@ -26,7 +26,7 @@ img {
 
 #returnLink {
     color: #3AA6DD;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 #returnLink:hover {
