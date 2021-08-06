@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import catsAPI from "../../utilities/cats-api";
 import CatListItem from "../../pages/CatListItem/CatListItem";
-// import "./CatListItem/CatListItem.css";
 
 function CatListPage(props) {
   const [cats, setCats] = useState([]);

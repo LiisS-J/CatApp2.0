@@ -7,7 +7,7 @@ async function showAllCats(req, res) {
 
 async function createACat(req, res) {
   console.log(req.body);
-//   req.body.imgUrl = req.body.url;
+  //   req.body.imgUrl = req.body.url;
   const newCat = await Cat.create(req.body);
   res.status(201).json(newCat);
 }

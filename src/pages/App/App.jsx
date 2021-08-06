@@ -10,7 +10,6 @@ import CatDetailPage from "../CatDetailPage/CatDetailPage";
 import AddCatPage from "../AddCatPage/AddCatPage";
 import UpdateCatPage from "../UpdateCatPage/UpdateCatPage";
 import "./App.css";
-// import "../CatCard/CatCard.css";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -48,43 +47,45 @@ function App() {
   }
 
   async function handleDeleteCat(id) {
-    console.log('   ~~~   handleDeleteCat(' + id + ')');
+    console.log("   ~~~   handleDeleteCat(" + id + ")");
     await catsAPI.deleteOne(id);
     setCats(cats.filter((c) => c._id !== id));
   }
 
   return (
     <main className="App">
+      <div className="mainPage">
+        <NavBar className="navBar" user={user} setUser={setUser} />
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/cats">
+            <CatListPage className="catDetails" />
+          </Route>
+          <Route path="/details">
+            <CatDetailPage user={user} handleDeleteCat={handleDeleteCat} />
+          </Route>
+          <Route path="/login">
+            <AuthPage setUser={setUser} />
+          </Route>
+        </Switch>
+      </div>
+
+      {user ? (
         <div className="mainPage">
-          <NavBar className="navBar" user={user} setUser={setUser} />
           <Switch>
-            <Route exact path="/">
-                <LandingPage />
+            <Route path="/new">
+              <AddCatPage handleAddCat={handleAddCat} />
             </Route>
-            <Route path="/cats">
-                <CatListPage className="catDetails" />
-            </Route>
-            <Route path="/details">
-                <CatDetailPage user={user} handleDeleteCat={handleDeleteCat} />
-            </Route>
-            <Route path="/login">
-                <AuthPage setUser={setUser} />
+            <Route exact path="/edit">
+              <UpdateCatPage handleUpdateCat={handleUpdateCat} />
             </Route>
           </Switch>
         </div>
-
-        {user ? (
-        <div className="mainPage">
-            <Switch>
-                <Route path="/new">
-                    <AddCatPage handleAddCat={handleAddCat} />
-                </Route>
-                <Route exact path="/edit">
-                    <UpdateCatPage handleUpdateCat={handleUpdateCat} />
-                </Route>
-            </Switch>
-        </div>
-        ) : ''}
+      ) : (
+        ""
+      )}
     </main>
   );
 }

@@ -16,9 +16,10 @@ function NavBar({ user, setUser }) {
     <div className="navBar">
       <header>
         <nav>
-          <NavLink to="/cats">HOME</NavLink>
+          <NavLink className="home" to="/cats">
+            HOME
+          </NavLink>
           &nbsp; | &nbsp;
-          {/* <NavLink to="/adopt">ADOPT</NavLink> */}
           <NavLink to="/new">ADD A KITTY</NavLink>
           {/* &nbsp; | &nbsp; */}
           {user ? (

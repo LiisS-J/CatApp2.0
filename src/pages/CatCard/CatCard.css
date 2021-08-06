@@ -1,7 +1,5 @@
 .catDetails {
-    /* border: 1px solid black; */
     text-align: center;
-    /* margin-top: 50px; */
 }
 
 img {
@@ -13,6 +11,7 @@ img {
 #catName {
     font-size: 2.5em;
 }
+
 
 #updateLink {
     color: rgb(57, 193, 42);
@@ -36,7 +35,7 @@ img {
 }
 
 #deleteBtn {
-    color: red;
+    color: white;
 }
 
 #deleteBtn:hover {

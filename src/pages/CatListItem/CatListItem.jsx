@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./CatListItem/CatListItem.css";
 
 function CatListItem({ cat }) {
   return (
@@ -9,19 +8,28 @@ function CatListItem({ cat }) {
         <img src={`${cat.imgUrl}`} />
       </div>
       <div>
-        <h2>{cat.name}</h2>
+        <h2 style={{ fontSize: "35px", textDecoration: "underline" }}>
+          {cat.name}
+        </h2>
       </div>
       <div>
         <div>
-          <b>Age:</b> {cat.age}
+          <p>
+            <b>Age:</b> {cat.age}
+          </p>
         </div>
         <div>
-          <b>Sex:</b> {cat.sex}
+          <p>
+            <b>Sex:</b> {cat.sex}
+          </p>
         </div>
         <div>
-          <b>Breed:</b> {cat.breed}
+          <p>
+            <b>Breed:</b> {cat.breed}
+          </p>
         </div>
         <Link
+          style={{ fontSize: "25px", color: "#3AA6DD" }}
           className="meetLink"
           to={{
             pathname: "/details",

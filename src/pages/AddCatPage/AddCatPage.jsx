@@ -31,14 +31,18 @@ function AddCatPage(props) {
   };
 
   return (
-    <>
+    <div>
       <h1>Add a New Cat</h1>
       <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
         <div>
           <label>
             <b>URL to the cat photo:</b>
           </label>
-          <input name="imgUrl" value={formData.imgUrl} onChange={handleChange} />
+          <input
+            name="imgUrl"
+            value={formData.imgUrl}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label>
@@ -105,7 +109,7 @@ function AddCatPage(props) {
           ADD CAT
         </button>
       </form>
-    </>
+    </div>
   );
 }
 

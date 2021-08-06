@@ -35,15 +35,7 @@ export function update(updatedCatData) {
 }
 
 export function deleteOne(id) {
-  //   console.log(' ::: THIS IS THE AUTHORIZATION TOKEN --> ',localStorage.getItem("token"));
-  //   return fetch(`${BASE_URL}/${id}`, {
-  //     method: "DELETE",
-  //     header: {
-  //       "content-type": "application/json",
-  //       "Authorization": `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //   }).then((res) => res.json());
-  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+  return sendRequest(`${BASE_URL}/${id}`, "DELETE");
 }
 
 export default catsAPI;

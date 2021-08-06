@@ -26,7 +26,14 @@ function UpdateCatPage(props) {
   };
 
   return (
-    <>
+    <div
+      style={{
+        border: "3px solid black",
+        borderRadius: "10px",
+        margin: "40px 150px",
+        padding: "60px",
+      }}
+    >
       <h1>Update Cat</h1>
       <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
         <div>
@@ -100,13 +107,28 @@ function UpdateCatPage(props) {
             required
           />
         </div>
-        <button type="submit" className="btn" disabled={invalidForm}>
-          UPDATE CAT
-        </button>
-        &nbsp;&nbsp;
-        <Link to="/cats">CANCEL</Link>
+        <div>
+          <button type="submit" className="btn" disabled={invalidForm}>
+            UPDATE CAT
+          </button>
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: "23px",
+              borderRadius: "8px",
+              width: "150px",
+              height: "40px",
+              backgroundColor: "red",
+              marginTop: "10px",
+            }}
+          >
+            <Link style={{ color: "white" }} to="/cats">
+              <b>CANCEL</b>
+            </Link>
+          </div>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
 

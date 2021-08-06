@@ -5,37 +5,59 @@ import "./CatCard.css";
 
 function CatCard({ cat, handleDeleteCat, user }) {
   return (
-    <div className="catDetails">
+    <div
+      className="catDetails"
+      style={{
+        border: "3px solid black",
+        borderRadius: "10px",
+        margin: "40px 150px",
+      }}
+    >
       <div>
         <img src={cat.imgUrl} />
       </div>
       <div>
         <h1 id="catName">{cat.name}</h1>
       </div>
+
       <div>
         <div>
-          <b>ID:</b> {cat._id}
+          <p>
+            <b>ID:</b> {cat._id}
+          </p>
         </div>
         <div>
-          <b>Name:</b> {cat.name}
+          <p>
+            <b>Name:</b> {cat.name}
+          </p>
         </div>
         <div>
-          <b>Sex:</b> {cat.sex}
+          <p>
+            <b>Sex:</b> {cat.sex}
+          </p>
         </div>
         <div>
-          <b>Age:</b> {cat.age}
+          <p>
+            <b>Age:</b> {cat.age}
+          </p>
         </div>
         <div>
-          <b>Breed:</b> {cat.breed}
+          <p>
+            <b>Breed:</b> {cat.breed}
+          </p>
         </div>
         <div>
-          <b>Health Condition:</b> {cat.health}
+          <p>
+            <b>Health Condition:</b> {cat.health}
+          </p>
         </div>
         <div>
-          <b>Adoption Status:</b> {cat.adoptionStatus}
+          <p>
+            <b>Adoption Status:</b> {cat.adoptionStatus}
+          </p>
         </div>
       </div>
-      {user.isAdmin && (
+      {user && user.isAdmin && (
         <Link
           id="updateLink"
           to={{
@@ -52,14 +74,14 @@ function CatCard({ cat, handleDeleteCat, user }) {
         </Link>
       </div>
       <div>
-        {user.isAdmin && (
+        {user && user.isAdmin && (
           <button id="deleteBtn" onClick={() => handleDeleteCat(cat._id)}>
             DELETE CAT
           </button>
         )}
       </div>
       <hr />
-      <div>
+      <div style={{ paddingBottom: "50px" }}>
         <h2>Applicants for this cat: </h2>
       </div>
     </div>
