@@ -31,7 +31,14 @@ function AddCatPage(props) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        border: "4px solid black",
+        borderRadius: "10px",
+        padding: "50px 80px",
+        margin: "100px 150px",
+      }}
+    >
       <h1>Add a New Cat</h1>
       <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
         <div>

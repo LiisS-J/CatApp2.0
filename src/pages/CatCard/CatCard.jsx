@@ -8,7 +8,7 @@ function CatCard({ cat, handleDeleteCat, user }) {
     <div
       className="catDetails"
       style={{
-        border: "3px solid black",
+        border: "4px solid black",
         borderRadius: "10px",
         margin: "40px 150px",
       }}

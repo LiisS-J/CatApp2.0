@@ -97,6 +97,7 @@ body {
       background-color: var(--tan-1);
       border: .3vmin solid var(--blue-3);
       border-radius: 1vmin;
+      margin: 70px 350px;
     }
     
     p.error-message {
